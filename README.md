@@ -1,27 +1,55 @@
 # LojaAlpha
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.0.2.
 
-## Development server
+# Loja Alpha
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Descrição do Projeto
 
-## Code scaffolding
+Loja Alpha é uma aplicação front-end desenvolvida como parte de um processo seletivo para a vaga de Desenvolvedor(a) Júnior - Front End. O projeto consiste em um sistema de autenticação e um CRUD (Create, Read, Update, Delete) de produtos, integrando com a API fornecida pela empresa.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias Utilizadas
 
-## Build
+- **Framework:** Angular
+- **Linguagem:** TypeScript
+- **API de Back-end:** [API](https://interview.t-alpha.com.br)
+- **Documentação da API:** [Documentação da API](https://interview.t-alpha.com.br/reference)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Funcionalidades
 
-## Running unit tests
+- **Autenticação de Usuário:**
+  - Registro de novo usuário
+  - Login de usuário existente
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **CRUD de Produtos:**
+  - Criação de novos produtos
+  - Leitura (visualização) de produtos existentes
+  - Atualização de informações de produtos
+  - Exclusão de produtos
 
-## Running end-to-end tests
+## Instalação e Configuração
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Pré-requisitos
 
-## Further help
+- Node.js instalado
+- Gerenciador de pacotes (npm ou yarn)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Passos para Rodar o Projeto
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/henriqtorresl/loja-alpha.git
+   cd loja-alpha
+   ```
+
+2. **Instale as dependências:**
+   ```bash
+    npm install
+   ```
+
+3. **Rodar a aplicação:**
+   ```bash
+   ng serve
+   ```
+
+   A aplicação estará disponível em `http://localhost:3000`.
