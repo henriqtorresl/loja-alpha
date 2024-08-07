@@ -2,8 +2,6 @@
 
 Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.0.2.
 
-# Loja Alpha
-
 ## Descrição do Projeto
 
 Loja Alpha é uma aplicação front-end desenvolvida como parte de um processo seletivo para a vaga de Desenvolvedor(a) Júnior - Front End. O projeto consiste em um sistema de autenticação e um CRUD (Create, Read, Update, Delete) de produtos, integrando com a API fornecida pela empresa.
