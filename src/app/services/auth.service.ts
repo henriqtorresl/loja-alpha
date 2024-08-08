@@ -30,4 +30,8 @@ export class AuthService {
     return token == null ? false : true;
   }
 
+  logout(): void {
+    localStorage.removeItem('token');
+  }
+
 }
