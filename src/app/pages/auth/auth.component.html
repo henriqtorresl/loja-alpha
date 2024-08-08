@@ -3,23 +3,23 @@
         <section>
             <img src="../../../assets/logo.png" alt="">
 
-            <form>
+            <form [formGroup]="loginForm">
                 <mat-form-field appearance="outline">
-                  <input matInput placeholder="CPF">
+                  <input matInput placeholder="CPF" formControlName="taxNumber">
                   <mat-icon matIconSuffix>person</mat-icon>
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
-                    <input matInput placeholder="Senha">
-                    <mat-icon matIconSuffix>visibility_off</mat-icon>
+                    <input #loginPassword type="password" matInput placeholder="Senha" formControlName="password">
+                    <mat-icon matIconSuffix style="cursor: pointer;" (click)="visibleLoginPassword()">visibility_off</mat-icon>
                 </mat-form-field>
     
                 <div>
-                    <button type="button">Entrar</button>
+                    <button type="button" (click)="login()">Entrar</button>
                 </div>
             </form>
 
-            <p>Não possui conta? <button (click)="register()">Cadastre-se</button></p>
+            <p>Não possui conta? <button (click)="switchToRegister()">Cadastre-se</button></p>
         </section>
     </div>
 
@@ -27,33 +27,38 @@
         <section>
             <img src="../../../assets/logo.png" alt="">
 
-            <form>
+            <form [formGroup]="registerForm">
                 <mat-form-field appearance="outline">
-                    <input matInput placeholder="Nome">
+                    <input matInput placeholder="Nome" formControlName="name">
                     <mat-icon matIconSuffix>person_pin</mat-icon>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                  <input matInput placeholder="CPF">
+                  <input matInput placeholder="CPF" formControlName="taxNumber">
                   <mat-icon matIconSuffix>person</mat-icon>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <input matInput placeholder="Email">
+                    <input matInput placeholder="Email" formControlName="mail">
                     <mat-icon matIconSuffix>mail</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Telefone" formControlName="phone">
+                    <mat-icon matIconSuffix>phone_iphone</mat-icon>
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
-                    <input matInput placeholder="Senha">
-                    <mat-icon matIconSuffix>visibility_off</mat-icon>
+                    <input #registerPassword type="password" matInput placeholder="Senha" formControlName="password">
+                    <mat-icon matIconSuffix style="cursor: pointer;" (click)="visibleRegisterPassword()">visibility_off</mat-icon>
                 </mat-form-field>
     
                 <div>
-                    <button type="button">Cadastre-se</button>
+                    <button type="button" (click)="register()">Cadastre-se</button>
                 </div>
             </form>
 
-            <p>Já Possui uma conta? <button (click)="login()">Entrar</button></p>
+            <p>Já Possui uma conta? <button (click)="switchToLogin()">Entrar</button></p>
         </section>
     </div>
 </div>

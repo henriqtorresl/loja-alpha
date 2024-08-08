@@ -32,7 +32,7 @@
     background-color: transparent;
     height: 100%;
     width: 90%;
-    background-color: rgba(128, 127, 127, 0.5);
+    background-color: rgba(#002045, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,10 +55,16 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+            color: #fff;
 
             mat-form-field {
                 width: 80%;
+                color: #fff;
             }
+
+            ::-webkit-input-placeholder {
+                color: #929292;
+             }
 
             div {
                 width: 80%;
