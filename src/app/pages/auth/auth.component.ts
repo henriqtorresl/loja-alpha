@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CreateUserDto } from 'src/app/interfaces/CreateUserDto';
 import { LoginDto } from 'src/app/interfaces/LoginDto';
 import { AuthService } from 'src/app/services/auth.service';
@@ -20,7 +21,8 @@ export class AuthComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -76,7 +78,10 @@ export class AuthComponent implements OnInit {
     }
 
     this.authService.login(user).subscribe((response) => {
-      console.log(response);
+      const { data } = response;
+
+      localStorage.setItem('token', data.token);
+      this.router.navigate(['/home']);
     },
     (err) => {
       const { message } = err.error;

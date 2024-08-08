@@ -60,6 +60,10 @@
             mat-form-field {
                 width: 80%;
                 color: #fff;
+
+                input {
+                    color: #fff;
+                }
             }
 
             ::-webkit-input-placeholder {

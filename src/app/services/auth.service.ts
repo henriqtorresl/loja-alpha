@@ -25,8 +25,9 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    // verifica se o usuário está logado ou não!
-    return false;
+    const token = localStorage.getItem('token');
+
+    return token == null ? false : true;
   }
 
 }
