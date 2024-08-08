@@ -1,1 +1,59 @@
-<p>auth works!</p>
+<div class="container">
+    <div class="auth" #loginRef>
+        <section>
+            <img src="../../../assets/logo.png" alt="">
+
+            <form>
+                <mat-form-field appearance="outline">
+                  <input matInput placeholder="CPF">
+                  <mat-icon matIconSuffix>person</mat-icon>
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Senha">
+                    <mat-icon matIconSuffix>visibility_off</mat-icon>
+                </mat-form-field>
+    
+                <div>
+                    <button type="button">Entrar</button>
+                </div>
+            </form>
+
+            <p>Não possui conta? <button (click)="register()">Cadastre-se</button></p>
+        </section>
+    </div>
+
+    <div class="auth" #registerRef style="display: none;">
+        <section>
+            <img src="../../../assets/logo.png" alt="">
+
+            <form>
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Nome">
+                    <mat-icon matIconSuffix>person_pin</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <input matInput placeholder="CPF">
+                  <mat-icon matIconSuffix>person</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Email">
+                    <mat-icon matIconSuffix>mail</mat-icon>
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Senha">
+                    <mat-icon matIconSuffix>visibility_off</mat-icon>
+                </mat-form-field>
+    
+                <div>
+                    <button type="button">Cadastre-se</button>
+                </div>
+            </form>
+
+            <p>Já Possui uma conta? <button (click)="login()">Entrar</button></p>
+        </section>
+    </div>
+</div>
