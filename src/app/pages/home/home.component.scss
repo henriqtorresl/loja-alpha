@@ -39,16 +39,14 @@
 }
 
 .description {
-    color: #3F51B5;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    height: 5%;
+    display: none;
 }
 
-.scroll-button {
+.scroll-button-up {
+    display: none;
+}
+
+.scroll-button-down {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,17 +63,17 @@
 }
 
 .invisible-button {
-    background-color: #efefef;
-    color: #efefef;
-    cursor: default;
+    background-color: #efefef !important;
+    color: #efefef !important;
+    cursor: default !important; 
 
     &:hover {
-        background-color: #efefef;
+        background-color: #efefef !important;
     }
 }
 
 .products {
-    height: 83%;
+    height: 90%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -114,7 +112,7 @@
 
 .have-products {
     width: 100%;
-    height: 95%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -131,7 +129,7 @@
 
 .card-product {
     color: #fff;
-    min-height: 155px;
+    min-height: 200px;
     width: 90%;
     background-color: #3F51B5;
     padding: 20px;
@@ -183,26 +181,122 @@
 
 // Tablet
 @media screen and (min-width: 768px) and (max-width: 992px) {
+    .description {
+        display: block;
+        color: #3F51B5;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 5%;
+    }
+
+    .scroll-button-up {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border: none;
+        background-color: #3F51B5;
+        border-radius: 50%;
+        padding: 2px;
+        cursor: pointer;
+    
+        &:hover {
+            background-color: #03448f;
+        }
+    }
+
     .card-product {
         width: 75%;
+        min-height: 155px;
+    }
+
+    .products {
+        height: 83%;
     }
 }
 
 // Desktop
 @media screen and (min-width: 992px) and (max-width: 1200px) {
+    .description {
+        display: block;
+        color: #3F51B5;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 5%;
+    }
+
+    .scroll-button-up {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border: none;
+        background-color: #3F51B5;
+        border-radius: 50%;
+        padding: 2px;
+        cursor: pointer;
+    
+        &:hover {
+            background-color: #03448f;
+        }
+    }
+
     .card-product {
         width: 65%;
+        min-height: 155px;
+    }
+
+    .products {
+        height: 83%;
     }
 }
 
 // Telas grandes
 @media screen and (min-width: 1200px) {
+    .description {
+        display: block;
+        color: #3F51B5;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 5%;
+    }
+
+    .scroll-button-up {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border: none;
+        background-color: #3F51B5;
+        border-radius: 50%;
+        padding: 2px;
+        cursor: pointer;
+    
+        &:hover {
+            background-color: #03448f;
+        }
+    }
+
     .card {
         width: 70%;
     }
 
     .card-product {
         width: 65%;
+        min-height: 155px;
+    }
+
+    .products {
+        height: 83%;
     }
 
     .body {

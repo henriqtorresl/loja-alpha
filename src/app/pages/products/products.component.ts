@@ -25,10 +25,10 @@ export class ProductsComponent implements OnInit {
 
   createForm(): void {
     this.form = this.formBuilder.group({
-      name: ['', [Validators.required]],
+      name: [''],
       description: [''],
-      price: [0, [Validators.required]],
-      stock: [0, [Validators.required]]
+      price: [0],
+      stock: [0]
     });
   }
 
@@ -56,7 +56,12 @@ export class ProductsComponent implements OnInit {
         duration: 2500
       });
 
-      this.form.reset();
+      this.form.patchValue({
+        name: '',
+        description: '',
+        price: 0,
+        stock: 0
+      });
 
     },
     (err) => {
