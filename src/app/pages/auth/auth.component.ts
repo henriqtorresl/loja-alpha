@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CreateUserDto } from 'src/app/interfaces/CreateUserDto';
 import { LoginDto } from 'src/app/interfaces/LoginDto';
@@ -22,7 +23,8 @@ export class AuthComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private snackbar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -78,15 +80,26 @@ export class AuthComponent implements OnInit {
     }
 
     this.authService.login(user).subscribe((response) => {
-      const { data } = response;
+      const { data, message } = response;
 
       localStorage.setItem('token', data.token);
+      this.snackbar.open(message, 'OK', {
+        duration: 2500
+      });
       this.router.navigate(['/home']);
     },
     (err) => {
       const { message } = err.error;
 
-      console.log('Erro: ', message);
+      if (Array.isArray(message)) {
+        this.snackbar.open(message[0], 'OK', {
+          duration: 2500
+        });
+      } else {
+        this.snackbar.open(message, 'OK', {
+          duration: 2500
+        });
+      }
     });
   }
 
@@ -100,14 +113,25 @@ export class AuthComponent implements OnInit {
     }
 
     this.authService.register(newUser).subscribe((response) => {
-      console.log(response);
+      const { message } = response;
 
-      // Salvar o token no local storage!
+      this.snackbar.open(message, 'OK', {
+        duration: 2500
+      });
+      this.switchToLogin();
     },
     (err) => {
       const { message } = err.error;
 
-      console.log('Erro: ', message);
+      if (Array.isArray(message)) {
+        this.snackbar.open(message[0], 'OK', {
+          duration: 2500
+        });
+      } else {
+        this.snackbar.open(message, 'OK', {
+          duration: 2500
+        });
+      }
     });
   }
 
