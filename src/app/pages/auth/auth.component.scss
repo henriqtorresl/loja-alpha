@@ -19,7 +19,7 @@
 .container {
     width: 100%;
     height: 100%;
-    background-image: url('../../../assets/background-auth.jpg');
+    background-image: url('../../../assets/background-auth.jpg') !important;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
