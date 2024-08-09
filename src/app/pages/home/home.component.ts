@@ -73,8 +73,16 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   }
 
   openEditProduct(product: Product): void {
-    this.dialogRef.open(EditComponent, {
+    const dialogRef = this.dialogRef.open(EditComponent, {
       data: product
+    });
+
+    dialogRef.afterClosed().pipe(take(1)).subscribe((response) => {      
+      const { message, productUpdated } = response;
+      
+      if (message == 'success') {
+        this.products[this.products.indexOf(product)] = productUpdated;
+      }
     });
   }
 
@@ -84,7 +92,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     });
 
     dialogRef.afterClosed().pipe(take(1)).subscribe((response) => {
-      const { message, id } = response;
+      const { message } = response;
       
       if (message == 'sucess') {
         this.products = this.products.filter(p => p.id !== product.id);

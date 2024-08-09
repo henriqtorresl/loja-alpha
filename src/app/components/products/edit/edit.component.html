@@ -1,1 +1,44 @@
-<p>edit works!</p>
+<div class="container">
+    <div class="title">
+        <h1>Editar Produto</h1>
+    </div>
+
+    <div class="body">
+
+        <form [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Nome do Produto" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <textarea matInput placeholder="Descrição do Produto" formControlName="description"></textarea>
+            </mat-form-field>
+
+            <section>
+                <mat-form-field appearance="outline" class="input-number">
+                    <mat-label style="color: #3F51B5;">Preço: {{ form.value.price | brlCurrency }}</mat-label>
+                    <mat-icon matIconPrefix (click)="subtractionNumber('price')">remove</mat-icon>
+                    <input matInput type="number" formControlName="price" [value]="form.value.price">
+                    <mat-icon matIconSuffix (click)="sumNumber('price')">add</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="input-number">
+                    <mat-label style="color: #3F51B5;">Estoque: {{ form.value.stock | stockFormat }}</mat-label>
+                    <mat-icon matIconPrefix (click)="subtractionNumber('stock')">remove</mat-icon>
+                    <input matInput type="number" formControlName="stock" [value]="form.value.stock">
+                    <mat-icon matIconSuffix (click)="sumNumber('stock')">add</mat-icon>
+                </mat-form-field>
+            </section>
+
+            <div class="buttons">
+                <div>
+                    <button (click)="cancel()">Cancelar</button>
+                </div>
+
+                <div class="submit-button">
+                    <input type="submit" value="Salvar" (click)="edit()">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

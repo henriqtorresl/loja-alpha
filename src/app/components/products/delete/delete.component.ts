@@ -33,7 +33,7 @@ export class DeleteComponent implements OnInit {
         duration: 2500
       });
 
-      this.dialogRef.close({ message: 'sucess', id: this.product.id });
+      this.dialogRef.close({ message: 'sucess' });
     },
     () => {
       this.snackbar.open('Não foi possível excluir!', 'OK', {
