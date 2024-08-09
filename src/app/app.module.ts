@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     AuthComponent,
     HomeComponent,
     NavBarComponent,
-    SideBarComponent
+    SideBarComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
