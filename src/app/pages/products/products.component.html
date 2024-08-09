@@ -1,1 +1,46 @@
-<p>products works!</p>
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card">
+        <div class="title">
+            <h1>Novo Produto</h1>
+        </div>
+
+        <div class="body">
+            <div class="description">
+                <p>A página de produtos permite criar e gerenciar novos itens com um formulário intuitivo para inserir nome, descrição, preço e estoque.</p>
+            </div>
+
+            <form [formGroup]="form">
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Nome do Produto" formControlName="name">
+                    <!-- <mat-icon matIconSuffix>person_pin</mat-icon> -->
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <textarea matInput placeholder="Descrição do Produto" formControlName="description"></textarea>
+                  <!-- <mat-icon matIconSuffix>person</mat-icon> -->
+                </mat-form-field>
+
+                <section>
+                    <mat-form-field appearance="outline" class="input-number">
+                        <mat-label style="color: #3F51B5;">Preço: {{ form.value.price | brlCurrency }}</mat-label>
+                        <mat-icon matIconPrefix (click)="subtractionNumber('price')">remove</mat-icon>
+                        <input matInput type="number" formControlName="price" [value]="form.value.price">
+                        <mat-icon matIconSuffix (click)="sumNumber('price')">add</mat-icon>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline" class="input-number">
+                        <mat-label style="color: #3F51B5;">Estoque: {{ form.value.stock | stockFormat }}</mat-label>
+                        <mat-icon matIconPrefix (click)="subtractionNumber('stock')">remove</mat-icon>
+                        <input matInput type="number" formControlName="stock"  [value]="form.value.stock">
+                        <mat-icon matIconSuffix (click)="sumNumber('stock')">add</mat-icon>
+                    </mat-form-field>
+                </section>
+
+                <div class="submit-button">
+                    <input type="submit" value="Criar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
