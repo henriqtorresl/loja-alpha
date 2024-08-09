@@ -1,0 +1,49 @@
+<div class="sidebar" #sidebar>
+    <div class="sidebar-container">
+        <div class="close">
+            <button (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+
+        <div class="list">
+            <ul>
+                <li>
+                    <a 
+                        routerLink="home" 
+                        [ngClass]="isActive('home')"
+                        (click)="close()"
+                    >
+                        Produtos
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        routerLink="products" 
+                        [ngClass]="isActive('products')"
+                        (click)="close()"
+                    >
+                        Novo Produto
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        routerLink="about" 
+                        [ngClass]="isActive('about')"
+                        (click)="close()"
+                    >
+                        Sobre
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="buttons">
+            
+            <a class="logout-button">
+                Sair
+            </a>
+        </div>
+
+    </div>
+</div>

@@ -12,12 +12,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    HomeComponent
+    HomeComponent,
+    NavBarComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

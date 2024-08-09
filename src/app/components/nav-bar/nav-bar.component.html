@@ -1,0 +1,41 @@
+<div class="container-mobile" #containerMobile>
+    <button (click)="onMenuButtonClick()">
+        <mat-icon>menu</mat-icon>
+    </button>
+</div>
+
+<app-side-bar *ngIf="isSidebarOpen" (closeEvent)="closeSideBar($event)"></app-side-bar>
+
+<div class="container-header" #container>
+    <ul>
+        <li>
+            <a 
+                routerLink="home" 
+                [ngClass]="isActive('home')"
+            >
+                Produtos
+            </a>
+        </li>
+        <li>
+            <a 
+                routerLink="projects" 
+                [ngClass]="isActive('products')"
+            >
+                Novo Produto
+            </a>
+        </li>
+        <li>
+            <a 
+                routerLink="about" 
+                [ngClass]="isActive('about')"
+            >
+                Sobre
+            </a>
+        </li>
+        <li class="buttons">
+            <a class="logout-button">
+                Sair
+            </a>
+        </li>
+    </ul>
+</div>
