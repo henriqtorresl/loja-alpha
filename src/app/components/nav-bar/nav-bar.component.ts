@@ -1,6 +1,8 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationEnd, Router } from '@angular/router';
 import { timer, take } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -16,28 +18,13 @@ export class NavBarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private authService: AuthService,
+    private snackbar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
-    this.getCurrentRoute();
-  }
 
-  getCurrentRoute(): void{
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.currentRoute = event.url;
-        this.disabledNavbar();
-        console.log(this.currentRoute);
-      }
-    });
-  }
-
-  disabledNavbar(): void {
-    if (this.currentRoute == '/auth') {
-      this.containerRef.nativeElement.style.display = 'none';
-      this.containerMobileRef.nativeElement.style.display = 'none';
-    }
   }
 
   animationBackgroundSideBar(): void {
@@ -78,6 +65,14 @@ export class NavBarComponent implements OnInit {
   isActive(route: string): string {
     this.animationBackgroundSideBar();
     return this.router.url.includes(route) ? 'active' : '';
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/auth']);
+    this.snackbar.open('Desconectado com sucesso.!', 'OK', {
+      duration: 1500
+    });
   }
 
 }
