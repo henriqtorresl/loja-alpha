@@ -70,7 +70,7 @@ export class NavBarComponent implements OnInit {
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/auth']);
-    this.snackbar.open('Desconectado com sucesso.!', 'OK', {
+    this.snackbar.open('Desconectado com sucesso!', 'OK', {
       duration: 1500
     });
   }

@@ -50,7 +50,7 @@ export class SideBarComponent {
     this.authService.logout();
     this.close();
     this.router.navigate(['/auth']);
-    this.snackbar.open('Desconectado com sucesso.!', 'OK', {
+    this.snackbar.open('Desconectado com sucesso!', 'OK', {
       duration: 1500
     });
   }
