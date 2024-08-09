@@ -58,4 +58,14 @@ export class ProductService {
     );
   }
 
+  deleteProduct(productId: number): Observable<any> {
+    const token = localStorage.getItem('token');
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('Authorization', `Bearer ${token}`);
+    }
+
+    return this.httpClient.delete(`${this.api}/delete-product/${productId}`, { headers }).pipe(take(1));
+  }
+
 }

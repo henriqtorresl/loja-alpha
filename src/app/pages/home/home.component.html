@@ -34,7 +34,7 @@
                                         <div>
                                             <h4><span>Produto:</span> {{ product.name }}</h4>
 
-                                            <button matTooltip="Editar produto">
+                                            <button matTooltip="Editar produto" (click)="openEditProduct(product)">
                                                 <mat-icon>edit</mat-icon>
                                             </button>
                                         </div>
@@ -45,7 +45,7 @@
                                         <p><span>Preço:</span> {{ product.price | brlCurrency }} </p>
                                         <div>
                                             <p><span>Quantidade:</span> {{ product.stock | stockFormat }} </p>
-                                            <button  matTooltip="Excluir produto">
+                                            <button matTooltip="Excluir produto" (click)="openDeleteProduct(product)">
                                                 <mat-icon>delete</mat-icon>
                                             </button>
                                         </div>

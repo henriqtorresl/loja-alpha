@@ -1,1 +1,10 @@
-<p>delete works!</p>
+<div class="container">
+    <div class="question">
+        <h4>Tem certeza de que deseja excluir o produto "<span>{{ product.name }}</span>"?</h4>
+    </div>
+
+    <div class="buttons">
+        <button (click)="cancel()">Cancelar</button>
+        <button (click)="delete()">Excluir</button>
+    </div>
+</div>

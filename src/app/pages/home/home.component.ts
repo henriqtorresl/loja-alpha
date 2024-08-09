@@ -1,4 +1,8 @@
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { take } from 'rxjs';
+import { DeleteComponent } from 'src/app/components/products/delete/delete.component';
+import { EditComponent } from 'src/app/components/products/edit/edit.component';
 import { Product } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -17,7 +21,9 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   scrollDownEnabled: boolean = false;
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private cdr: ChangeDetectorRef,
+    private dialogRef: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +34,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     //Chamado após cada verificação da view do componente. Aplica-se apenas a componentes.
     //Adicione 'implementa AfterViewChecked' à classe.
     this.checkScrollButtons();
-
+    this.cdr.detectChanges();  // para garantir que as mudanças vão ser detectadas.
   }
 
   getAllProducts(): void {
@@ -62,7 +68,28 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   scroll(direction: 'up' | 'down'): void {
     if (this.productsRef) {
       const container = this.productsRef.nativeElement;
-      container.scrollTop += (direction === 'up' ? -180 : 180);
+      container.scrollTop += (direction === 'up' ? -180 : 180);   // desloca 180px pra cima ou 180px pra baixo, o tamanho dos cards é de 150px mais 20px de padding e 10px de margin
     }
   }
+
+  openEditProduct(product: Product): void {
+    this.dialogRef.open(EditComponent, {
+      data: product
+    });
+  }
+
+  openDeleteProduct(product: Product): void {
+    const dialogRef = this.dialogRef.open(DeleteComponent, {
+      data: product
+    });
+
+    dialogRef.afterClosed().pipe(take(1)).subscribe((response) => {
+      const { message, id } = response;
+      
+      if (message == 'sucess') {
+        this.products = this.products.filter(p => p.id !== product.id);
+      }
+    });
+  }
+
 }
