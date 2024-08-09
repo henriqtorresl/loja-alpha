@@ -20,6 +20,8 @@ import { StockFormatPipe } from './pipes/stock-format.pipe';
 import { AboutComponent } from './pages/about/about.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { EditComponent } from './components/products/edit/edit.component';
+import { DeleteComponent } from './components/products/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ProductsComponent,
     BrlCurrencyPipe,
     StockFormatPipe,
-    AboutComponent
+    AboutComponent,
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
