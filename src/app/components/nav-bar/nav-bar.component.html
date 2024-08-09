@@ -1,4 +1,6 @@
 <div class="container-mobile" #containerMobile>
+    <img src="../../../assets/logo.png" alt="Logo">
+
     <button (click)="onMenuButtonClick()">
         <mat-icon>menu</mat-icon>
     </button>
@@ -7,6 +9,8 @@
 <app-side-bar *ngIf="isSidebarOpen" (closeEvent)="closeSideBar($event)"></app-side-bar>
 
 <div class="container-header" #container>
+    <img src="../../../assets/logo.png" alt="Logo">
+
     <ul>
         <li>
             <a 

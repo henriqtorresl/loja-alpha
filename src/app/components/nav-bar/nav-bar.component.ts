@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit {
     private elementRef: ElementRef,
     private authService: AuthService,
     private snackbar: MatSnackBar
-  ) {}
+  ) { }
 
   ngOnInit(): void {
 
@@ -40,12 +40,11 @@ export class NavBarComponent implements OnInit {
     this.animationBackgroundSideBar();
   }
 
-  // Fecha a sidebar se o clique for fora dela
   @HostListener('document:click', ['$event'])
   onClickOutside(event: Event): void {
-    const sidebar = document.getElementsByClassName('sidebar').item(0)!;
+    const sidebar = document.getElementsByClassName('sidebar').item(0);
 
-    if (!this.elementRef.nativeElement.contains(event.target)) {
+    if (sidebar && !this.elementRef.nativeElement.contains(event.target)) {
       // Animação do background do sidebar
       this.animationBackgroundSideBar();
       // Aplica a animação de fechar o sidebar

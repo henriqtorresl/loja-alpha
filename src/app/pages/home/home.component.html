@@ -6,7 +6,69 @@
         </div>
 
         <div class="body">
+            <div class="description">
+                <p>Visualize e gerencie todos os produtos cadastrados na loja.</p>
+            </div>
 
+            <button class="scroll-button" (click)="scroll('up')" [ngClass]="enableScrollUp()">
+                <mat-icon>arrow_upward</mat-icon>
+            </button>
+
+            <div class="products">
+                <ng-container *ngIf="loaded else loading">
+                    <ng-container *ngIf="products.length == 0 else listProducts">
+                        <div class="no-product">
+                            <p>
+                                Sua loja ainda não tem produtos.
+                                <a routerLink="/products">Clique aqui</a> para adicionar um novo produto.
+                            </p>
+                        </div>
+                    </ng-container>
+                    
+                    <!-- Meus Produtos -->
+                    <ng-template #listProducts>
+                        <div class="have-products" #productsRef (scroll)="onDivScroll($event)">
+                            <ng-container *ngFor="let product of products">
+                                <div class="card-product">
+                                    <section>
+                                        <div>
+                                            <h4><span>Produto:</span> {{ product.name }}</h4>
+
+                                            <button matTooltip="Editar produto">
+                                                <mat-icon>edit</mat-icon>
+                                            </button>
+                                        </div>
+                                        <p>{{product.description}}</p>
+                                    </section>
+
+                                    <section>
+                                        <p><span>Preço:</span> {{ product.price | brlCurrency }} </p>
+                                        <div>
+                                            <p><span>Quantidade:</span> {{ product.stock | stockFormat }} </p>
+                                            <button  matTooltip="Excluir produto">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </section>
+                                </div>                  
+                            </ng-container>
+                        </div>
+                    </ng-template>
+                    
+                </ng-container>
+            </div>
+
+            <button class="scroll-button" (click)="scroll('down')" [ngClass]="enableScrollDown()">
+                <mat-icon>
+                    arrow_downward
+                </mat-icon>
+            </button>
         </div>
+
+        <ng-template #loading>
+            <div class="spinner">
+                <mat-spinner></mat-spinner>
+            </div>
+        </ng-template>
     </div>
 </div>

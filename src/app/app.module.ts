@@ -18,6 +18,8 @@ import { ProductsComponent } from './pages/products/products.component';
 import { BrlCurrencyPipe } from './pipes/brl-currency.pipe';
 import { StockFormatPipe } from './pipes/stock-format.pipe';
 import { AboutComponent } from './pages/about/about.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { AboutComponent } from './pages/about/about.component';
     MatIconModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
