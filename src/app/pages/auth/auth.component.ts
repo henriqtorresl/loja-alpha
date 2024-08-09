@@ -54,6 +54,7 @@ export class AuthComponent implements OnInit {
     this.registerRef.nativeElement.style.display = 'flex';
 
     this.registerRef.nativeElement.classList.add('slide-in');
+    this.loginForm.reset();
   }
 
   switchToLogin(): void {
@@ -61,6 +62,7 @@ export class AuthComponent implements OnInit {
     this.loginRef.nativeElement.style.display = 'flex';
 
     this.loginRef.nativeElement.classList.add('slide-in');
+    this.registerForm.reset();
   }
 
   visibleLoginPassword(): void {
