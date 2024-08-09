@@ -15,6 +15,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { BrlCurrencyPipe } from './pipes/brl-currency.pipe';
+import { StockFormatPipe } from './pipes/stock-format.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ProductsComponent } from './pages/products/products.component';
     HomeComponent,
     NavBarComponent,
     SideBarComponent,
-    ProductsComponent
+    ProductsComponent,
+    BrlCurrencyPipe,
+    StockFormatPipe
   ],
   imports: [
     BrowserModule,
