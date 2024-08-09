@@ -1,0 +1,134 @@
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes downToUp {
+    from {
+        opacity: 0;
+        transition: all 1s;
+        transform: translateY(200%);
+    }
+
+    to {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downToUpFast {
+    from {
+        opacity: 0;
+        transition: all 1s;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hiddenToShow {
+    from {
+        opacity: 0;
+        filter: blur(3px);
+        transition: all 1s;
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0px);
+        transition: all 1s;
+    }
+}
+
+@keyframes comingFromRight {
+    from {
+        opacity: 0;
+        filter: blur(3px);
+        transition: all 1s;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateX(0);
+        transition: all 1s;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(3px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transition: all 1s;
+}
+
+.showFromRight {
+    opacity: 1;
+    filter: blur(0px);
+    animation: comingFromRight 0.5s ease-in;
+}
+
+.showFromDown {
+    opacity: 1;
+    filter: blur(0px);
+    animation: downToUpFast 0.5s ease-in;
+}
