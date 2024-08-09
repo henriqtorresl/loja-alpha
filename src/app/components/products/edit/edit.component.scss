@@ -112,3 +112,22 @@
         }
     }
 }
+
+// Mobile
+@media screen and (max-width: 768px) {
+    .body {
+        form {
+
+            section {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+                mat-form-field {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
