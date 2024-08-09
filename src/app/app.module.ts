@@ -17,6 +17,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { BrlCurrencyPipe } from './pipes/brl-currency.pipe';
 import { StockFormatPipe } from './pipes/stock-format.pipe';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { StockFormatPipe } from './pipes/stock-format.pipe';
     SideBarComponent,
     ProductsComponent,
     BrlCurrencyPipe,
-    StockFormatPipe
+    StockFormatPipe,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
