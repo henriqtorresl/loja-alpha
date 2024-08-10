@@ -59,4 +59,4 @@ Loja Alpha é uma aplicação front-end desenvolvida como parte de um processo s
    ng serve
    ```
 
-   A aplicação estará disponível em `http://localhost:3000`.
+   A aplicação estará disponível em `http://localhost:4200`.
