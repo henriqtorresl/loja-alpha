@@ -34,7 +34,7 @@
   display: flex;
   justify-content: end;
   padding: 0 0 4px 0;
-  border-bottom: 1px solid #3F51B5;
+  border-bottom: 1px solid #011226;
 
   button {
     cursor: pointer;
@@ -49,7 +49,7 @@
     border-radius: 5px;
 
     &:hover {
-      background-color: #3F51B5;
+      background-color: #3548b3;
       transition: background-color 0.5s ease, transform 0.5s ease;
     }
   }
@@ -74,7 +74,7 @@
         cursor: pointer;
     
         &:hover {
-          color: #3F51B5;
+          color: #011226;
           transition: background-color 0.5s ease, transform 0.5s ease;
         }
       }
@@ -83,13 +83,13 @@
 }
 
 .active {
-  color: #3F51B5 !important;
+  color: #011226 !important;
 }
 
 .buttons {
   width: 100%;
   padding-top: 10px;
-  border-top: 1px solid #3F51B5;
+  border-top: 1px solid #011226;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,7 +100,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #3F51B5;
     margin: 10px 0 20px 0;
 
     button {
@@ -110,7 +109,7 @@
       margin-left: 10px;
       border: none;
       color: #fff;
-      background-color: #3F51B5;
+      background-color: #011226;
       height: 100%;
       font-size: 18px;
 
@@ -137,7 +136,7 @@
   justify-content: center;
   border: none;
   color: #fff;
-  background-color: #3F51B5;
+  background-color: #011226;
   font-size: 14px;
   width: 50%;
   padding: 5px;

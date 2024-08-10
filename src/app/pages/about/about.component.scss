@@ -1,3 +1,5 @@
+@import url('../../../animations.scss');
+
 // Mobile
 .container {
     width: 100%;
@@ -16,6 +18,14 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .title {
@@ -38,16 +48,41 @@
     align-items: center;
 }
 
+.card-about {
+    width: 90%;
+    margin: 15px 0 15px 0;
+    background-color: #3F51B5;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    h3 {
+        margin-bottom: 15px;
+    }
+
+    a {
+        color: #011226;
+        text-decoration: none;
+    }
+}
+
+.animation-left {
+    animation: slideInLeft 1s ease-in;
+}
+
+.animation-right {
+    animation: slideInRight 1s ease-in;
+}
+
 // Tablet
 @media screen and (min-width: 768px) and (max-width: 992px) {
-    .body {
-        width: 80%;
-    }
+    
 }
 
 // Desktop
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-    .body {
+    .card-about {
         width: 70%;
     }
 }
@@ -58,7 +93,7 @@
         width: 70%;
     }
 
-    .body {
-        width: 60%;
+    .card-about {
+        width: 50%;
     }
 }

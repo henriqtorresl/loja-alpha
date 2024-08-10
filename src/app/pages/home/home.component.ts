@@ -1,5 +1,6 @@
 import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { DeleteComponent } from 'src/app/components/products/delete/delete.component';
 import { EditComponent } from 'src/app/components/products/edit/edit.component';
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   constructor(
     private productService: ProductService,
     private cdr: ChangeDetectorRef,
-    private dialogRef: MatDialog
+    private dialogRef: MatDialog,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +44,10 @@ export class HomeComponent implements OnInit, AfterViewChecked {
       this.products = response;
       this.loaded = true;
     });
+  }
+
+  navigateToNewProduct(): void {
+    this.router.navigate(['/products']);
   }
 
   checkScrollButtons(): void {

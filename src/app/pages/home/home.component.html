@@ -17,7 +17,7 @@
             <div class="products">
                 <ng-container *ngIf="loaded else loading">
                     <ng-container *ngIf="products.length == 0 else listProducts">
-                        <div class="no-product">
+                        <div class="no-product" (click)="navigateToNewProduct()">
                             <p>
                                 Sua loja ainda não tem produtos.
                                 <a routerLink="/products">Clique aqui</a> para adicionar um novo produto.

@@ -1,3 +1,5 @@
+@import url('../../../animations.scss');
+
 // Mobile
 .container {
     width: 100%;
@@ -94,6 +96,8 @@
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: hiddenToShow 0.5s ease-in;
+        cursor: pointer;
 
         &:hover {
             transform: scale(1.1);
@@ -141,6 +145,7 @@
     align-items: start;
     cursor: pointer;
     margin: 10px 0 10px 0;
+    animation: hiddenToShow 0.5s ease-in;
 
     span {
         color: #011226;
@@ -182,6 +187,7 @@
 // Tablet
 @media screen and (min-width: 768px) and (max-width: 992px) {
     .description {
+        animation: downToUp 1s ease-in;
         display: block;
         color: #3F51B5;
         text-align: center;
@@ -221,6 +227,7 @@
 // Desktop
 @media screen and (min-width: 992px) and (max-width: 1200px) {
     .description {
+        animation: downToUp 1s ease-in;
         display: block;
         color: #3F51B5;
         text-align: center;
@@ -260,6 +267,7 @@
 // Telas grandes
 @media screen and (min-width: 1200px) {
     .description {
+        animation: downToUp 1s ease-in;
         display: block;
         color: #3F51B5;
         text-align: center;

@@ -1,3 +1,5 @@
+@import url('../../../animations.scss');
+
 // Mobile
 .container {
     width: 100%;
@@ -76,6 +78,7 @@
 }
 
 .description {
+    animation: slideInRight 0.3s ease-in;
     color: #3F51B5;
     text-align: center;
     display: flex;
