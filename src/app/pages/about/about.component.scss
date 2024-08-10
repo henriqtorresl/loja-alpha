@@ -46,6 +46,14 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
+    position: relative;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .card-about {
