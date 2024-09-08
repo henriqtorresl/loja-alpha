@@ -2,15 +2,6 @@
 
 Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.0.2.
 
-## Acesso à Aplicação
-
-Acesse a aplicação através do seguinte link: [Loja Alpha](https://loja-alpha-products.vercel.app/).
-
-**Credenciais de Teste:**  
-Caso não queira se cadastrar, utilize as credenciais abaixo para acessar a aplicação:
-- **Login:** 21052002210
-- **Senha:** teste123
-
 ## Descrição do Projeto
 
 Loja Alpha é uma aplicação front-end desenvolvida como parte de um processo seletivo para a vaga de Desenvolvedor(a) Júnior - Front End. O projeto consiste em um sistema de autenticação e um CRUD (Create, Read, Update, Delete) de produtos, integrando com a API fornecida pela empresa.
@@ -19,8 +10,6 @@ Loja Alpha é uma aplicação front-end desenvolvida como parte de um processo s
 
 - **Framework:** Angular
 - **Linguagem:** TypeScript
-- **API de Back-end:** [API](https://interview.t-alpha.com.br)
-- **Documentação da API:** [Documentação da API](https://interview.t-alpha.com.br/reference)
 
 ## Funcionalidades
 
